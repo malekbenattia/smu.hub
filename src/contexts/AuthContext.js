@@ -1,7 +1,15 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
-import { mockUsers } from '@/data/mockData';
+import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import { User, mockUsers } from '@/data/mockData';
 
-const AuthContext = createContext(undefined);
+interface AuthContextType {
+  user: User | null;
+  isLoading: boolean;
+  login: (email: string, password: string) => Promise<{ success: boolean; error?: string }>;
+  logout: () => void;
+  isAuthenticated: boolean;
+}
+
+const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const useAuth = () => {
   const context = useContext(AuthContext);
@@ -11,8 +19,8 @@ export const useAuth = () => {
   return context;
 };
 
-export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
+export const AuthProvider = ({ children }: { children: ReactNode }) => {
+  const [user, setUser] = useState<User | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -24,18 +32,22 @@ export const AuthProvider = ({ children }) => {
     setIsLoading(false);
   }, []);
 
-  const login = async (email, password) => {
+  const login = async (email: string, password: string): Promise<{ success: boolean; error?: string }> => {
     setIsLoading(true);
+    
     // Simulate API call delay
     await new Promise(resolve => setTimeout(resolve, 800));
+    
     // Mock authentication - in production this would be a real API call
     const foundUser = mockUsers.find(u => u.email.toLowerCase() === email.toLowerCase());
+    
     if (foundUser && password === 'demo123') {
       setUser(foundUser);
       localStorage.setItem('studentlife_user', JSON.stringify(foundUser));
       setIsLoading(false);
       return { success: true };
     }
+    
     setIsLoading(false);
     return { success: false, error: 'Invalid email or password. Try demo123 as password.' };
   };

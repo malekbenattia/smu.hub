@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useAuth } from '@/contexts/AuthContext';
-import studentLifeLogo from '@/assets/student-life-logo.png';
+import studentLifeLogo from '../../assets/telechargement.png';
 
 const navLinks = [
   { href: '/', label: 'Home' },

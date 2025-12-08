@@ -1,3 +1,5 @@
+import { getClubLogo } from "./clubLogos";
+
 export interface User {
   id: string;
   name: string;
@@ -67,7 +69,7 @@ export const mockClubs: Club[] = [
     id: '1',
     name: 'IEEE SMU',
     description: 'The IEEE Student Branch at SMU fosters technical innovation, professional development, and networking opportunities for engineering and technology students.',
-    logo: '/clubs/ieee-logo.png',
+    logo: getClubLogo('1'),
     category: 'Technology',
     memberCount: 85,
     recentEvents: ['Tech Talks', 'Workshops', 'Hackathons'],
@@ -76,7 +78,7 @@ export const mockClubs: Club[] = [
     id: '2',
     name: 'Securinets SMU',
     description: 'A cybersecurity club dedicated to promoting information security awareness, organizing CTF competitions, and training future security experts.',
-    logo: '/clubs/securinets-logo.png',
+    logo: getClubLogo('2'),
     category: 'Technology',
     memberCount: 60,
     recentEvents: ['CTF Competitions', 'Security Workshops', 'Awareness Campaigns'],
@@ -85,7 +87,7 @@ export const mockClubs: Club[] = [
     id: '3',
     name: 'Melodies Club SMU',
     description: 'The music club of SMU where students explore their musical talents, perform at events, and share their passion for all genres of music.',
-    logo: '/clubs/melodies-logo.png',
+    logo: getClubLogo('3'),
     category: 'Arts',
     memberCount: 45,
     recentEvents: ['Open Mic Nights', 'Music Workshops', 'Campus Concerts'],
@@ -94,7 +96,7 @@ export const mockClubs: Club[] = [
     id: '4',
     name: 'Enactus SMU',
     description: 'A community of student leaders using entrepreneurial action to empower people and shape a better world through social impact projects.',
-    logo: '/clubs/enactus-logo.png',
+    logo: getClubLogo('4'),
     category: 'Social Entrepreneurship',
     memberCount: 70,
     recentEvents: ['Social Projects', 'Business Competitions', 'Community Outreach'],
@@ -103,7 +105,7 @@ export const mockClubs: Club[] = [
     id: '5',
     name: 'JCI SMU Tunis',
     description: 'Junior Chamber International chapter empowering young people to create positive change through leadership development and community impact.',
-    logo: '/clubs/jci-logo.png',
+    logo: getClubLogo('5'),
     category: 'Social Entrepreneurship',
     memberCount: 55,
     recentEvents: ['Leadership Training', 'Community Service', 'Networking Events'],
@@ -112,7 +114,7 @@ export const mockClubs: Club[] = [
     id: '6',
     name: 'Libertad Radio Club SMU',
     description: 'The campus radio station bringing entertainment, music, and student voices to the SMU community through live broadcasts and podcasts.',
-    logo: '/clubs/libertad-radio-logo.png',
+    logo: getClubLogo('6'),
     category: 'Entertainment',
     memberCount: 35,
     recentEvents: ['Live Shows', 'Podcast Series', 'Music Events'],
@@ -121,7 +123,7 @@ export const mockClubs: Club[] = [
     id: '7',
     name: 'Lions SMU Nation',
     description: 'Part of Lions Clubs International, dedicated to community service, humanitarian efforts, and making a positive impact locally and globally.',
-    logo: '/clubs/lions-logo.png',
+    logo: getClubLogo('7'),
     category: 'NGOs',
     memberCount: 50,
     recentEvents: ['Charity Drives', 'Community Service', 'Humanitarian Projects'],

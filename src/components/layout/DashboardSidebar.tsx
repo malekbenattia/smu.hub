@@ -12,7 +12,7 @@ import {
   Building2,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import studentLifeLogo from '@/assets/student-life-logo.png';
+import studentLifeLogo from '../../assets/telechargement.png';
 
 const memberLinks = [
   { href: '/dashboard', label: 'Overview', icon: LayoutDashboard },

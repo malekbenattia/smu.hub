@@ -5,15 +5,14 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "@/contexts/AuthContext";
 
-// Public Pages
 import Index from "./Pages/Index";
 import About from "./Pages/About";
 import Clubs from "./Pages/Clubs";
 import Newsletter from "./Pages/Newsletter";
 import Login from "./Pages/Login";
+import Register from "./Pages/Register";
 import NotFound from "./Pages/NotFound";
 
-// Dashboard Pages
 import DashboardHome from "./Pages/dashboard/DashboardHome";
 import JobAlerts from "./Pages/dashboard/JobAlerts";
 import CalendarPage from "./Pages/dashboard/CalendarPage";
@@ -38,6 +37,7 @@ const App = () => (
             <Route path="/clubs" element={<Clubs />} />
             <Route path="/newsletter" element={<Newsletter />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
 
             {/* Dashboard Routes */}
             <Route path="/dashboard" element={<DashboardHome />} />
@@ -58,3 +58,4 @@ const App = () => (
 );
 
 export default App;
+
